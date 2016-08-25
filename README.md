@@ -1,14 +1,16 @@
- README.txt
-Author: Jade Chan
-Date: Nov 11, 2015
+# Plagiarism Checker
+### Author: Jade Chan
+### Date: Nov 11, 2015
 
-SUMMARY
--------
-This program checks the similarity of two files based on a file of 
-synonyms.
+## SUMMARY
+This program checks the similarity of two files, accounting for synomyms.
 
-ARCHITECTURE
-------------
+## COMPILE & RUN
+	g++ plagiarism_checker.cpp -o plagiarism_checker
+	./plagiarism_checker synonyms.txt file1.txt file2.txt
+
+
+## ARCHITECTURE
 This program reads in a few arguments from command line.
 
 	Handling synonyms:
@@ -41,26 +43,20 @@ This program reads in a few arguments from command line.
 	generated. 
 
 
-DATA STRUCTURES USED
---------------------
+## DATA STRUCTURES USED
 
-	Hashmap
+	# 1. Hashmap
 	This was used to store each synonym and the key. This data structure was chosen
 	as it provides constant time for the lookup for a word. 
 
-	Vectors
+	# 2. Vectors
 	This was used to store all the words in a file. This data structure was chosen 
 	as the words in a file only need to be traversed linearly. Access to the middle
 	of the vector was not necessary.
 
-ALGORITHMIC COMPLEXITY & RUNTIME
----------------------------------
+## ALGORITHMIC COMPLEXITY & RUNTIME
 
 	This program currently runs on n^2 time, as there are 2 doubly-nested for-loops in
 	the exists, and parsing_tuples function. 
 
-COMPILE & RUN 
---------------
-g++ scanfiles.cpp -o scanfiles
-./scanfiles synfile.txt file1.txt file2.txt
 
