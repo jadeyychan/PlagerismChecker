@@ -1,6 +1,8 @@
 # Plagiarism Checker
 Author: Jade Chan, Date: Nov 11, 2015
 
+---
+
 ### SUMMARY
 This program checks the similarity of two files, accounting for synomyms.
 
