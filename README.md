@@ -1,6 +1,5 @@
 # Plagiarism Checker
-Author: Jade Chan
-Date: Nov 11, 2015
+Author: Jade Chan, Date: Nov 11, 2015
 
 ### SUMMARY
 This program checks the similarity of two files, accounting for synomyms.
@@ -10,31 +9,26 @@ This program checks the similarity of two files, accounting for synomyms.
 	./plagiarism_checker synonyms.txt file1.txt file2.txt
 
 
-### ARCHITECTURE
-This program reads in a few arguments from command line.
-
-Handling synonyms:
-The program equates the synonyms by writing them to be the same word.
+### SOLUTION
+This program first reads through the synonyms file, and hashes then accordingly. 
 It takes the words in each line, and hashes them as the key, with the 
 value being the first word in that line.
 
-For example, the line "run sprint jog" is hashed as
-	   key : value
-	----------------
-	sprint : run
-	   jog : run
+	For example, the line "run sprint jog" is hashed as
+		   key : value
+		----------------
+		sprint : run
+		   jog : run
 
-The words in each file are then read through, and checked if they are
-one of the hashed words.
-If they are — they are replaced by the first word in the line of synonyms.
+Then, it equates the synonyms, writing them to be the same word.
+The words in each input file are then read through, and checked if they are
+one of the hashed words. If they are — they are replaced by the first word in the line of synonyms.
 
-For example, the line 
-	"go for a jog" 
+	For example, the line 
+		"go for a jog" 
 
-is replaced with 
-	"go for a run"
-
-
+	is replaced with 
+		"go for a run"
 
 The words are then concatenated into 1 string according to the tuples count.
 
@@ -48,7 +42,7 @@ generated.
 This was used to store each synonym and the key. This data structure was chosen
 as it provides constant time for the lookup for a word. 
 
-2. Vectors
+2. Vectors:
 This was used to store all the words in a file. This data structure was chosen 
 as the words in a file only need to be traversed linearly. Access to the middle
 of the vector was not necessary.
