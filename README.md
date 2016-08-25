@@ -4,10 +4,13 @@ Author: Jade Chan, Date: Nov 11, 2015
 ### SUMMARY
 This program checks the similarity of two files, accounting for synomyms.
 
+---
+
 ### COMPILE & RUN
 	g++ plagiarism_checker.cpp -o plagiarism_checker
 	./plagiarism_checker synonyms.txt file1.txt file2.txt
 
+---
 
 ### SOLUTION
 This program first reads through the synonyms file, and hashes then accordingly. 
@@ -35,6 +38,7 @@ The words are then concatenated into 1 string according to the tuples count.
 The two files are then checked against each other, and the percentage is
 generated. 
 
+---
 
 ### DATA STRUCTURES USED
 
@@ -46,6 +50,8 @@ as it provides constant time for the lookup for a word.
 This was used to store all the words in a file. This data structure was chosen 
 as the words in a file only need to be traversed linearly. Access to the middle
 of the vector was not necessary.
+
+---
 
 ### ALGORITHMIC COMPLEXITY & RUNTIME
 This program currently runs on n^2 time, as there are 2 doubly-nested for-loops in
